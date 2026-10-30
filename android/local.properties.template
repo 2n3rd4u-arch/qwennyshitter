@@ -1,0 +1,6 @@
+# Copy this file to android/local.properties and adjust paths if needed.
+# Gradle finds the SDK/NDK automatically if ANDROID_HOME / ANDROID_SDK_ROOT
+# (or ANDROID_NDK_HOME) is set in the environment, in which case you can
+# skip local.properties entirely.
+sdk.dir=/opt/android-sdk
+# (Do not set ndk.dir here; android.ndkVersion in app/build.gradle selects the NDK.)
