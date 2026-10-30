@@ -33,9 +33,13 @@ static bool init_app(void)
         SDL_Log("SDL_Init failed: %s", SDL_GetError());
         return false;
     }
-    if (!SDL_CreateWindow("myapp", 640, 480, SDL_WINDOW_RESIZABLE,
-                          &window, &renderer)) {
+    window = SDL_CreateWindow("myapp", 640, 480, SDL_WINDOW_RESIZABLE);
+    if (!window) {
         SDL_Log("SDL_CreateWindow failed: %s", SDL_GetError());
+        return false;
+    }
+    if (!SDL_CreateRenderer(window, NULL)) {
+        SDL_Log("SDL_CreateRenderer failed: %s", SDL_GetError());
         return false;
     }
     return true;
