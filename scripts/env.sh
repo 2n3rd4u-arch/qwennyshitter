@@ -18,6 +18,7 @@ if [[ -z "${ANDROID_HOME:-}" ]]; then
         if [[ -d "$cand" ]]; then export ANDROID_HOME="$cand"; break; fi
     done
 fi
+export ANDROID_HOME="${ANDROID_HOME:-}"
 export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
 
 # Pick an NDK: explicit ANDROID_NDK_HOME wins, else newest under $ANDROID_HOME/ndk,
